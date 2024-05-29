@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        #message {
+            display: none;
+        }
+    </style>
+
+    <div class="wrap">
+        <p><b>Click the button 20 times!</b></p>
+        <p id="clickCount">Click count: 0</p>
+        <div id="message"></div>
+        <button id="clickButton" class="btn btn-outline-dark">Click Me Mahal!! Ughh</button>
+    </div>
+
+    <script>
+        let clickCount = 0;
+        const button = document.getElementById('clickButton');
+        const clickCountDisplay = document.getElementById('clickCount');
+        const message = document.getElementById('message');
+
+        button.addEventListener('click', () => {
+            clickCount++;
+            if (clickCount < 20) {
+                clickCountDisplay.textContent = `Click count: ${clickCount}`;
+            } else {
+                clickCountDisplay.style.display = 'none';
+                message.style.display = 'block';
+                message.innerHTML = ` <h4 style="text-align:center; margin-bottom:0px;">I love You Mahal</h4>
+                <br>
+                <center>
+                <img style="margin-bottom:20px;" src="img.jpg" height="200px" alt="Image">
+                </center>
+
+                `;
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
